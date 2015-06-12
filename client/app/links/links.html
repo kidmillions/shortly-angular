@@ -1,3 +1,15 @@
 <div id='container'>
-  <!-- Your html here -->
+
+
+
+  <!-- a link that routes us to shorten -->
+  <a href="/#shorten">Shorten a new link</a>
+
+
+  <!-- a list of each link that has been shortened -->
+  <div>
+    <div ng-repeat="link in data.links">
+      <div><a ng-href="/api/links/{{link.code}}">{{ link.title }}</a></div>
+    </div>
+  </div>
 </div>
