@@ -11,13 +11,21 @@ angular.module('shortly.services', [])
     });
   };
 
+  var postLinks = function(link) {
+    return $http({
+      method: 'POST',
+      url: '/api/links',
+      data: link
+    })
+    .then(function(resp) {
+      console.log('link posted! response =', resp);
+    });
+  };
 
   return {
-    getLinks: getLinks
+    getLinks: getLinks,
+    postLinks: postLinks
   };
-  // Your code here
-  // making get request to server to retrieve links obj
-  //
 })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
