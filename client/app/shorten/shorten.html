@@ -2,6 +2,7 @@
   <a ng-href="/#/links">View Links</a>
   <form name='shortenForm' ng-submit="submitForm(shortenForm.$valid)" novalidate>
     <label>Add Url: <input name="url" type="url" ng-model="link.url" required/></label>
+    <div ng-show="shortenForm.$dirty && shortenForm.$invalid" class="warning">Please enter a valid URL</div>
     <button type="submit" ng-disabled="shortenForm.$invalid">Submit</button>
   </form>
 </div>

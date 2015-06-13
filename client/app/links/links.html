@@ -1,15 +1,10 @@
 <div id='container'>
-
-
-
-  <!-- a link that routes us to shorten -->
   <a href="/#shorten">Shorten a new link</a>
-
-
-  <!-- a list of each link that has been shortened -->
   <div>
-    <div ng-repeat="link in data.links">
-      <div><a ng-href="/api/links/{{link.code}}">{{ link.title }}</a></div>
+    <label>Search for Links<input ng-model="searchLinks" /></label>
+    <div ng-repeat="link in data.links | filter:searchLinks | orderBy: '-visits'">
+      <a ng-href="/api/links/{{link.code}}">{{ link.title }}</a>
+      <span>visits: {{ link.visits }}</span>
     </div>
   </div>
 </div>

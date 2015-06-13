@@ -146,3 +146,15 @@ input[type=url]:focus {
   clear: both;
 }
 
+form input.ng-invalid.ng-dirty:focus {
+  color: #FF4634;
+}
+
+form input.ng-valid.ng-dirty:focus {
+  color: #01B251;
+}
+
+.warning {
+  font-size: 10px;
+  color: #FF4634;
+}
