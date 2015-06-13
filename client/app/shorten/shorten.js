@@ -7,4 +7,15 @@ angular.module('shortly.shorten', [])
       $location.path('/links');
     });
   };
+
+  $scope.submitForm = function (isValid) {
+    if (isValid) {
+      console.log('i am valid');
+      $scope.addLink($scope.link);
+    }
+    else{
+      console.log('form not valid');
+    }
+  };
 });
+

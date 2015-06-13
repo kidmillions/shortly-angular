@@ -1,6 +1,7 @@
 <div id='container'>
-  <form ng-submit="addLink(link)">
-    <label>Add Url: <input ng-model="link.url" /></label>
-    <button>Submit</button>
+  <a ng-href="/#/links">View Links</a>
+  <form name='shortenForm' ng-submit="submitForm(shortenForm.$valid)" novalidate>
+    <label>Add Url: <input name="url" type="url" ng-model="link.url" required/></label>
+    <button type="submit" ng-disabled="shortenForm.$invalid">Submit</button>
   </form>
 </div>
