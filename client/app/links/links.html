@@ -1,10 +1,10 @@
+<navbar></navbar>
 <div id='container'>
-  <a href="/#shorten">Shorten a new link</a>
+
   <div>
     <label>Search for Links<input ng-model="searchLinks" /></label>
-    <div ng-repeat="link in data.links | filter:searchLinks | orderBy: '-visits'">
-      <a ng-href="/api/links/{{link.code}}">{{ link.title }}</a>
-      <span>visits: {{ link.visits }}</span>
+    <div class="links" ng-repeat="link in data.links | filter:searchLinks | orderBy: '-visits'">
+      <detailed-link link="link"></detailed-link>
     </div>
   </div>
 </div>

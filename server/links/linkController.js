@@ -1,6 +1,7 @@
 var Link    = require('./linkModel.js'),
     Q       = require('q'),
-    util    = require('../config/utils.js');
+    util    = require('../config/utils.js'),
+    urlParse   = require('url');
 
 
 module.exports = {
@@ -56,7 +57,8 @@ module.exports = {
             url: url,
             visits: 0,
             base_url: req.headers.origin,
-            title: title
+            title: title,
+            img_url: 'http://' + urlParse.parse(url).host + '/favicon.ico'
           };
           return createLink(newLink);
         }
